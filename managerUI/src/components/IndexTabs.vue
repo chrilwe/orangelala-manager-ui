@@ -1,6 +1,10 @@
 <template>
 	<Layout :style="{padding: '0 24px 24px'}">
-        <Breadcrumb :style="{margin: '10px 0'}"></Breadcrumb>
+        <Breadcrumb :style="{margin: '10px 0'}">
+        	<div class="yellow">
+        		{{username}},欢迎使用由chrilwe开发的orangelala商城后台管理系统
+        	</div>
+        </Breadcrumb>
         <Content :style="{padding: '24px', minHeight: '530px', background: '#e8eaec'}">
             <div id="tabs">
             	<Row style="background:#eee;padding:3px">
@@ -96,7 +100,9 @@
 <script>
 	export default{
 		data() {
-
+			return {
+				username: "admin"
+			}
 		}
 	}
 </script>

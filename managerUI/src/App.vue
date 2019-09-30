@@ -1,31 +1,65 @@
 <template>
     <div class="layout">
         <Layout>
-            <v-Oheader></v-Oheader>
+            <div :is="Oheader"></div>
             <Layout>
                 <Sider hide-trigger :style="{background: '#fff'}">
                    <Menu :theme="theme3" active-name="1" :style="{width: auto}"> 
-			            <MenuItem name="1">
-			                <div @click="openTabs(1)">
+                   		<MenuItem name="1">
+                   			<div @click="openTabs(IndexTabs)">
+				                <Icon type="md-chatbubbles" />
+				                首页
+				            </div>
+			            </MenuItem>
+			            <MenuItem name="item">
+			                <div @click="openTabs(Item)">
 			                	<Icon type="md-document" />
-			                	文章管理
+			                	商品管理
 			                </div>
 			            </MenuItem>
 			            <MenuItem name="2">
 			                <Icon type="md-chatbubbles" />
-			                评论管理
+			                会员管理
 			            </MenuItem>
 			            <MenuItem name="3">
 			                <Icon type="md-heart" />
-			                用户留存
+			                订单管理
 			            </MenuItem>
 			            <MenuItem name="4">
 			                <Icon type="md-leaf" />
-			                流失用户
+			                数据统计
+			            </MenuItem>
+			            <MenuItem name="4">
+			                <Icon type="md-leaf" />
+			                店铺装修
+			            </MenuItem>
+			            <MenuItem name="4">
+			                <Icon type="md-leaf" />
+			                文章营销
 			            </MenuItem> 
+			            <MenuItem name="4">
+			                <Icon type="md-leaf" />
+			                分权系统
+			            </MenuItem> 
+			            <MenuItem name="4">
+			                <Icon type="md-leaf" />
+			                系统设置
+			            </MenuItem>
+			            <MenuItem name="4">
+			                <Icon type="md-leaf" />
+			                快递助手
+			            </MenuItem>
+			            <MenuItem name="4">
+			                <Icon type="md-leaf" />
+			                优惠券管理
+			            </MenuItem>
+			            <MenuItem name="4">
+			                <Icon type="md-leaf" />
+			                经销商管理
+			            </MenuItem>     
 				    </Menu>
                 </Sider>
-                <v-IndexTabs></v-IndexTabs>
+                <div :is="currentTabs"></div>
             </Layout>
         </Layout>
     </div>
@@ -34,21 +68,29 @@
 <script>
 	import Oheader from "./components/Oheader.vue";
 	import IndexTabs from "./components/IndexTabs.vue";
+	import Item from "./components/Item.vue";
     export default {
        data() {
    	 		return {
-
+   	 			IndexTabs: "IndexTabs",
+   	 			Oheader: "Oheader",
+   	 			currentTabs: "IndexTabs",
+   	 			Item: "Item"
    	 		}
        },
        components: {
-	 		"v-Oheader": Oheader,
-	 		"v-IndexTabs": IndexTabs
+	 		Oheader,
+	 		IndexTabs,
+	 		Item
 	   },
 	   methods: {
 	   		openTabs(name) {
-	   			alert("open"+name);
+	   			this.currentTabs = name;
 	   		}
-	   }
+	   },
+	   mounted() {
+	  		
+	  }
     }
 </script>
 

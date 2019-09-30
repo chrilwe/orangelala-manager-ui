@@ -7,7 +7,7 @@
             
             <div class="demo-avatar">
                 <a @click="modal1=true">
-                    <Avatar style="background-color: #5cadff;float: right;right: 15px;top: 12px" icon="ios-person" size="large"/>
+                    <Avatar style="background-color: #5cadff;float: right;right: 15px;top: 12px" icon="ios-person" size="large" title="admin"/>
                 </a>
                 <Modal
                     title="系统消息"
