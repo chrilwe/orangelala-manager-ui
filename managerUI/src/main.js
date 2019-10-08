@@ -6,10 +6,12 @@ import router from './router'
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(iView);
+Vue.use(VueResource);
 
 /* eslint-disable no-new */
 new Vue({

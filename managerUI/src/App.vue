@@ -18,12 +18,16 @@
 			                </div>
 			            </MenuItem>
 			            <MenuItem name="2">
-			                <Icon type="md-chatbubbles" />
-			                会员管理
+				            <div @click="openTabs(User)">
+				                <Icon type="md-chatbubbles" />
+				                会员管理
+				             </div>
 			            </MenuItem>
-			            <MenuItem name="3">
-			                <Icon type="md-heart" />
-			                订单管理
+			            <MenuItem name="Order">
+			            	<div @click="openTabs(Order)">
+				                <Icon type="md-heart" />
+				                订单管理
+			                </div>
 			            </MenuItem>
 			            <MenuItem name="4">
 			                <Icon type="md-leaf" />
@@ -69,19 +73,25 @@
 	import Oheader from "./components/Oheader.vue";
 	import IndexTabs from "./components/IndexTabs.vue";
 	import Item from "./components/Item.vue";
+	import Order from "./components/Order.vue";
+	import User from "./components/User.vue";
     export default {
        data() {
    	 		return {
    	 			IndexTabs: "IndexTabs",
    	 			Oheader: "Oheader",
    	 			currentTabs: "IndexTabs",
-   	 			Item: "Item"
+   	 			Item: "Item",
+   	 			Order: "Order",
+   	 			User: "User",
    	 		}
        },
        components: {
 	 		Oheader,
 	 		IndexTabs,
-	 		Item
+	 		Item,
+	 		Order,
+	 		User
 	   },
 	   methods: {
 	   		openTabs(name) {
